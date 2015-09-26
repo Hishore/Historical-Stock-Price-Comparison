@@ -35,7 +35,7 @@ shinyServer(
                 })
                 s2<-reactive({
                         validate(
-                                need(try(getSymbols(input$text1,auto.assign=FALSE)), "Please enter valid ticker for the second stock")
+                                need(try(getSymbols(input$text2,auto.assign=FALSE)), "Please enter valid ticker for the second stock")
                         )
                         input$text2
                 })
