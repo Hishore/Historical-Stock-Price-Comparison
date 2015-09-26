@@ -43,18 +43,10 @@ How was this app created?
 
 3. Using close prices, but can be tweaked to include the option to get other prices and volume. E.g., to get amazon stock prices for Jan 3rd, 2007.
 
-
-```r
+```{r, warning=FALSE, message=FALSE}
 library(quantmod)
 amzn<-getSymbols('AMZN',auto.assign=FALSE)
 amzn[1,]
-```
-
-```
-##            AMZN.Open AMZN.High AMZN.Low AMZN.Close AMZN.Volume
-## 2007-01-03     38.68     39.06    38.05       38.7    12405100
-##            AMZN.Adjusted
-## 2007-01-03          38.7
 ```
 
 --- .class #id 
