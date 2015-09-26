@@ -1,0 +1,167 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <title>Introducing Historical Stock Price Comparison App</title>
+  <meta charset="utf-8">
+  <meta name="description" content="Introducing Historical Stock Price Comparison App">
+  <meta name="author" content="Carolyn">
+  <meta name="generator" content="slidify" />
+  <meta name="apple-mobile-web-app-capable" content="yes">
+  <meta http-equiv="X-UA-Compatible" content="chrome=1">
+  <link rel="stylesheet" href="libraries/frameworks/io2012/css/default.css" media="all" >
+  <link rel="stylesheet" href="libraries/frameworks/io2012/css/phone.css" 
+    media="only screen and (max-device-width: 480px)" >
+  <link rel="stylesheet" href="libraries/frameworks/io2012/css/slidify.css" >
+  <link rel="stylesheet" href="libraries/highlighters/highlight.js/css/tomorrow.css" />
+  <base target="_blank"> <!-- This amazingness opens all links in a new tab. -->  <link rel=stylesheet href="./assets/css/ribbons.css"></link>
+
+  
+  <!-- Grab CDN jQuery, fall back to local if offline -->
+  <script src="http://ajax.aspnetcdn.com/ajax/jQuery/jquery-1.7.min.js"></script>
+  <script>window.jQuery || document.write('<script src="libraries/widgets/quiz/js/jquery.js"><\/script>')</script> 
+  <script data-main="libraries/frameworks/io2012/js/slides" 
+    src="libraries/frameworks/io2012/js/require-1.0.8.min.js">
+  </script>
+  
+  
+
+</head>
+<body style="opacity: 0">
+  <slides class="layout-widescreen">
+    
+    <!-- LOGO SLIDE -->
+        <slide class="title-slide segue nobackground">
+  <hgroup class="auto-fadein">
+    <h1>Introducing Historical Stock Price Comparison App</h1>
+    <h2>Course Project for Developing Data Products</h2>
+    <p>Carolyn<br/>MOOCer</p>
+  </hgroup>
+  <article></article>  
+</slide>
+    
+
+    <!-- SLIDES -->
+    <slide class="" id="slide-1" style="background:;">
+  <hgroup>
+    <h2>Why?</h2>
+  </hgroup>
+  <article data-timings="">
+    <p>Why create/use this app?</p>
+
+<ol>
+<li>Stock investment for investment managers</li>
+<li>Quantitative research for quantitative analysts</li>
+<li>Company/industry comparison for people interested in finance in general</li>
+</ol>
+
+  </article>
+  <!-- Presenter Notes -->
+</slide>
+
+<slide class="class" id="id" style="background:;">
+  <hgroup>
+    <h2>What?</h2>
+  </hgroup>
+  <article data-timings="">
+    <p>What does this app do?</p>
+
+<ol>
+<li><p>This is a tool to get and compare histocial stock prices for publicly traded companies on NASDAQ or NYSE.</p></li>
+<li><p>Compares two stocks for a specific time period between 2007 and present by calculating the mean, standard deviation and correlation for the close prices.</p></li>
+<li><p>Generates time series charts for easy visualizaion.</p></li>
+</ol>
+
+  </article>
+  <!-- Presenter Notes -->
+</slide>
+
+<slide class="class" id="id" style="background:;">
+  <hgroup>
+    <h2>hoW?</h2>
+  </hgroup>
+  <article data-timings="">
+    <p>How was this app created?</p>
+
+<ol>
+<li><p>Using R package quantmod: a quantitative financial modelling and trading framework for R.</p></li>
+<li><p>Getting historial stock prices from Yahoo! Finance.</p></li>
+<li><p>Using close prices, but can be tweaked to include the option to get other prices and volume. E.g., to get amazon stock prices for Jan 3rd, 2007.</p></li>
+</ol>
+
+<pre><code class="r">library(quantmod)
+amzn&lt;-getSymbols(&#39;AMZN&#39;,auto.assign=FALSE)
+amzn[1,]
+</code></pre>
+
+<pre><code>##            AMZN.Open AMZN.High AMZN.Low AMZN.Close AMZN.Volume
+## 2007-01-03     38.68     39.06    38.05       38.7    12405100
+##            AMZN.Adjusted
+## 2007-01-03          38.7
+</code></pre>
+
+  </article>
+  <!-- Presenter Notes -->
+</slide>
+
+<slide class="class" id="id" style="background:;">
+  <hgroup>
+    <h2>Where?</h2>
+  </hgroup>
+  <article data-timings="">
+    <p>Where is the app/documentation/code?</p>
+
+<ol>
+<li><p>The app along with a short documentation is deployed on Rstudio&#39;s shiny server:
+<a href="https://carolynchen.shinyapps.io/HSPC">https://carolynchen.shinyapps.io/HSPC</a>.</p></li>
+<li><p>The ui.R and server.R source code is on github:
+&lt;&gt;.</p></li>
+</ol>
+
+  </article>
+  <!-- Presenter Notes -->
+</slide>
+
+    <slide class="backdrop"></slide>
+  </slides>
+  <div class="pagination pagination-small" id='io2012-ptoc' style="display:none;">
+    <ul>
+      <li>
+      <a href="#" target="_self" rel='tooltip' 
+        data-slide=1 title='Why?'>
+         1
+      </a>
+    </li>
+    <li>
+      <a href="#" target="_self" rel='tooltip' 
+        data-slide=2 title='What?'>
+         2
+      </a>
+    </li>
+    <li>
+      <a href="#" target="_self" rel='tooltip' 
+        data-slide=3 title='hoW?'>
+         3
+      </a>
+    </li>
+    <li>
+      <a href="#" target="_self" rel='tooltip' 
+        data-slide=4 title='Where?'>
+         4
+      </a>
+    </li>
+  </ul>
+  </div>  <!--[if IE]>
+    <script 
+      src="http://ajax.googleapis.com/ajax/libs/chrome-frame/1/CFInstall.min.js">  
+    </script>
+    <script>CFInstall.check({mode: 'overlay'});</script>
+  <![endif]-->
+</body>
+  <!-- Load Javascripts for Widgets -->
+  
+  <!-- LOAD HIGHLIGHTER JS FILES -->
+  <script src="libraries/highlighters/highlight.js/highlight.pack.js"></script>
+  <script>hljs.initHighlightingOnLoad();</script>
+  <!-- DONE LOADING HIGHLIGHTER JS FILES -->
+   
+  </html>
